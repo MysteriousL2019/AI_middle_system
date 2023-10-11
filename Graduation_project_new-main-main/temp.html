@@ -1,0 +1,49 @@
+<template>
+    <ve-line :data="chartData" :extend="extend"></ve-line>
+</template>
+
+<script>
+    export default {
+        data() {
+            this.extend = {
+                'yAxis.0.name': 'y轴名字',
+                'yAxis.0.nameLocation': 'middle',
+                'yAxis.0.nameTextStyle.padding': 14,
+                'yAxis.0.nameTextStyle.fontSize': 14,
+                'series.0.type': 'line',
+                'series.0.name': '访问用户',
+                'series.0.lineStyle': { color: '#ef55a7', type: 'dashed' },
+                'series.0.itemStyle.color': '#ef55a7',
+                series: {
+                    label: {
+                        normal: {
+                            show: true
+                        }
+                    }
+                },
+                legend: {
+                    textStyle: {
+                    },
+                    data: [
+                        { name: '访问用户', icon: 'circle' },
+                        { name: '下单用户', icon: 'roundRect' },
+                        { name: '下单率', icon: 'image://data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgogIDxsaW5lIHgxPSIwIiB5MT0iNSIgeDI9IjEwMCIgeTI9IjUiIHN0cm9rZS1kYXNoYXJyYXk9IjMgMSIgc3Ryb2tlPSIjZWY1NWE3Ii8+Cgo8L3N2Zz4=' },
+                    ]
+                }
+            }
+            return {
+                chartData: {
+                    columns: ['日期', '访问用户', '下单用户', '下单率'],
+                    rows: [
+                        { '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 },
+                        { '日期': '1/2', '访问用户': 3530, '下单用户': 3230, '下单率': 0.26 },
+                        { '日期': '1/3', '访问用户': 2923, '下单用户': 2623, '下单率': 0.76 },
+                        { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 },
+                        { '日期': '1/5', '访问用户': 3792, '下单用户': 3492, '下单率': 0.323 },
+                        { '日期': '1/6', '访问用户': 4593, '下单用户': 4293, '下单率': 0.78 }
+                    ]
+                }
+            }
+        }
+    }
+</script>
